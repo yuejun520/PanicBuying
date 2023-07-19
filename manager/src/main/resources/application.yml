@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/jgdb?serverTimezone=Hongkong&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 123456789
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+# mybatis-plus配置
+mybatis-plus:
+  type-enums-package: com.hbnu.pojo
+  mapper-locations: classpath:/mybatis/mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.hbnu.dao: debug
